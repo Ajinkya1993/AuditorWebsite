@@ -50,10 +50,12 @@ public class CustomerDAO {
         Connection con = null;
         try {
             con = getConnection();
+            con.setAutoCommit(false);
 //            PreparedStatement pstmt = con.prepareStatement("SELECT * FROM "
 //                    + tableName + " WHERE userName=?");
 //            pstmt.setString(1, userName);
             PreparedStatement pstmt = con.prepareStatement("SELECT * FROM " + alldataTable + limit);
+            pstmt.setFetchSize(254726);
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
                 
@@ -121,7 +123,7 @@ public class CustomerDAO {
         Connection con = null;
         try {
             fw = new FileWriter(outputName); //permission denied
-            bw = new BufferedWriter(fw);
+            bw = new BufferedWriter(fw, 32768);
             int[] columnIdx = new int[arr.length];
             StringBuilder tableHeader = new StringBuilder();
             for (int i = 0; i < arr.length; i++) {
@@ -133,7 +135,9 @@ public class CustomerDAO {
             
             con = getConnection();
             PreparedStatement pstmt = con.prepareStatement("SELECT * FROM " + alldataTable + limit);
+            pstmt.setFetchSize(254726);
             ResultSet rs = pstmt.executeQuery();
+            
             while (rs.next()) {
                 
                 StringBuilder sb = new StringBuilder();

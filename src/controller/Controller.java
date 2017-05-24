@@ -75,7 +75,7 @@ public class Controller extends HttpServlet {
             return;
         }
         
-        if (nextPage.startsWith("http")) {
+        if (nextPage.startsWith("http") || nextPage.startsWith("D:") ) {
             response.sendRedirect(nextPage);
             return;
         }

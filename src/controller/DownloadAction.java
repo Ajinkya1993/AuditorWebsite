@@ -33,7 +33,7 @@ public class DownloadAction extends Action {
     private static final int BYTES_DOWNLOAD = 1024;
     ///home/ubuntu/
     private static final String CLOUD_PATH = "/var/lib/tomcat8/webapps/ROOT/"; //http:\\35.164.61.42\\var\\lib\\tomcat8\\webapps\\ROOT\\
-    private static final String localPath = "D:\\Web\\apache-tomcat-8.0.38\\webapps\\ROOT\\";
+    private static final String localPath = "D:\\";
     public DownloadAction(CustomerDAO customerDAO, ServletContext ctx) {
         this.customerDAO = customerDAO;
         this.ctx = ctx;
@@ -52,15 +52,15 @@ public class DownloadAction extends Action {
         String[] columns = request.getParameterValues("selectedColumn");
         try {
             if (button == null || button.length() == 0) return "homepage.jsp";
-            else if ((button.equals("Download 100 Records") || button.equals("Download All Records")) && columnsStr != null) {
+            else if ((button.equals("Download 100 Records") || button.equals("Download All Records"))) {
                 List<List<String>> cus;
                 String newFileName = "safe_harbor_data.csv";
-                if (button.equals("Download 100 Records")) {
+                if (button.equals("Download 100 Records") && columnsStr != null) {
 //                    cus = customerDAO.readfromAllData(columns, " LIMIT 10");
-                    customerDAO.readAndOutputFile(columns, " LIMIT 100", CLOUD_PATH + newFileName);
+                    customerDAO.readAndOutputFile(columns, " LIMIT 50000", CLOUD_PATH + newFileName);
                 }
-//                else cus = customerDAO.readfromAllData(columns, " LIMIT 50000");
-                else customerDAO.readAndOutputFile(columns, " LIMIT 125000", CLOUD_PATH + newFileName);
+//                else cus = customerDAO.readfromAllData(columns, "");
+                else return "http://35.164.61.42/alldata.csv";
                 
 //                outputFile(cus, localPath + newFileName); //local, succcess
 //                outputFile(cus, cloudPath + newFileName);
