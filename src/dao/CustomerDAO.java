@@ -22,12 +22,11 @@ public class CustomerDAO {
 
     private String jdbcDriver;
     private String jdbcURL;
-    private final String alldataTable = "joinedTable";
-    private final static String[] ALL_COLUMN_NAMES = {"insurance_member_id", "grocery_member_id", "plan_number",
-            "age", "address", "credit_card", "ad_keywords", "coupon_code",
-            "firstname", "lastname", "gender", "ethnicity", "ssn", "zip", "id", "city", "state",
-            "insurance_id", "insurance_health_id", "disease_id", "prescription_id", "disease_name",
-            "disease_treats", "chemical_name", "marketing_name", "prescription_probability"};
+    private final String alldataTable = "newJoinedTable";
+    private final static String[] ALL_COLUMN_NAMES = {"ad_keywords",
+            "coupon_code", "age", "gender",  "ethnicity", "zip", "state", "disease_name", "disease_treats",
+            "chemical_name", "marketing_name", "prescription_probability", "consent_level", 
+            "authorization_date"};
     private final String[] ZIP_ARR = {"036","692", "878", "059", "790", 
             "879", "063", "821", "884", "102", "823", "890", "203", "830", "893", "556", "831"};
     private final Set<String> ZIP_SET = new HashSet<String>(Arrays.asList(ZIP_ARR));
@@ -81,12 +80,12 @@ public class CustomerDAO {
                 
                 for (int idx : columnIdx) {
                     String s = rs.getString(idx);
-                    if (idx == 4) {
-                        s = censorAge(s);
-                    }
-                    else if (idx == 14) {
-                        s = censorZip(s);
-                    }
+//                    if (idx == 4) {
+//                        s = censorAge(s);
+//                    }
+//                    else if (idx == 14) {
+//                        s = censorZip(s);
+//                    }
                     list.add(s);
                 }
                 res.add(list);

@@ -27,40 +27,46 @@
 					        <p><input type="checkbox" name="selectedColumn" value="2"/>grocery_member_id</p>
 					        <p><input type="checkbox" name="selectedColumn" value="3"/>plan_number</p> -->
 								<p>
-									<input type="checkbox" name="selectedColumn" value="7" />ad_keywords
+									<input type="checkbox" name="selectedColumn" value="1" />ad_keywords
 								</p>
 								<p>
-									<input type="checkbox" name="selectedColumn" value="8" />coupon_code
+									<input type="checkbox" name="selectedColumn" value="2" />coupon_code
 								</p>
 								<p>
-									<input type="checkbox" name="selectedColumn" value="4" />age
+									<input type="checkbox" name="selectedColumn" value="3" />age
 								</p>
 								<p>
-									<input type="checkbox" name="selectedColumn" value="11" />gender
+									<input type="checkbox" name="selectedColumn" value="4" />gender
 								</p>
 								<p>
-									<input type="checkbox" name="selectedColumn" value="12" />ethnicity
+									<input type="checkbox" name="selectedColumn" value="5" />ethnicity
 								</p>
 								<p>
-									<input type="checkbox" name="selectedColumn" value="14" />zip
+									<input type="checkbox" name="selectedColumn" value="6" />zip
 								</p>
 								<p>
-									<input type="checkbox" name="selectedColumn" value="17" />state
+									<input type="checkbox" name="selectedColumn" value="7" />state
 								</p>
 								<p>
-									<input type="checkbox" name="selectedColumn" value="22" />disease_name
+									<input type="checkbox" name="selectedColumn" value="8" />disease_name
 								</p>
 								<p>
-									<input type="checkbox" name="selectedColumn" value="23" />disease_treats
+									<input type="checkbox" name="selectedColumn" value="9" />disease_treats
 								</p>
 								<p>
-									<input type="checkbox" name="selectedColumn" value="24" />chemical_name
+									<input type="checkbox" name="selectedColumn" value="10" />chemical_name
 								</p>
 								<p>
-									<input type="checkbox" name="selectedColumn" value="25" />marketing_name
+									<input type="checkbox" name="selectedColumn" value="11" />marketing_name
 								</p>
 								<p>
-									<input type="checkbox" name="selectedColumn" value="26" />perscription_probability
+									<input type="checkbox" name="selectedColumn" value="12" />perscription_probability
+								</p>
+								<p>
+									<input type="checkbox" name="selectedColumn" value="13" />consent_level
+								</p>
+								<p>
+									<input type="checkbox" name="selectedColumn" value="14" />authorization_date
 								</p>
 							</div>
 							
